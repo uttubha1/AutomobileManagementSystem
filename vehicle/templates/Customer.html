@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Customer Registration
+{% endblock title %}
+
+
+{% block body %}
+<div class="container px-5 py-5">
+    <h1 class="text-center">Customer Register Now!</h1>
+    <form method="post" action="/CustomerSignUp">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="Customer_name" class="form-label">Name</label>
+          <input type="text" name="Customer_name" class="form-control" id="Customer_name" placeholder="Enter Your Name">
+        </div>
+        <div class="mb-3">
+            <label for="Customer_address" class="form-label">Address</label>
+            <input type="text" name="Customer_address" class="form-control" id="Customer_address" placeholder="Enter Your Address">
+        </div>
+        <div class="mb-3">
+            <label for="Customer_PAN" class="form-label">PAN</label>
+            <input type="text" name="Customer_PAN" class="form-control" id="Customer_PAN" placeholder="Enter PAN">
+        </div>
+        <div class="mb-3">
+            <label for="Customer_aadhar" class="form-label">Aadhar Number</label>
+            <input type="number" name="Customer_aadhar" class="form-control" id="Customer_aadhar" placeholder="Enter Aadhar Card Number">
+        </div>   
+        <div class="mb-3">
+            <label for="Customer_phone" class="form-label">PhoneNo</label>
+            <input type="phone" name="Customer_phone" class="form-control" id="Customer_phone" placeholder="Enter PhoneNo">
+        </div>
+        <button type="submit" class="btn btn-primary" style="float:right;">Submit</button>
+      </form>
+</div>
+{% endblock body %}
